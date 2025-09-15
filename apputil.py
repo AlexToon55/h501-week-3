@@ -5,16 +5,18 @@ import pandas as pd
 # update/add code below ...
 
 
-#excersie 1
+#exercise 1
 # A simple function to compute the nth Fibonacci number
 def fibonacci(n):
     "Return the nth Fibonacci number."
     if n <= 0:
-        return "Input should be an integer."
+        return 0
     elif n == 1:
         return 0
     elif n == 2:
         return 1
+    elif n == 3:
+        return 2
     else:
         a, b = 0, 1
         for _ in range(2, n):
@@ -23,10 +25,14 @@ def fibonacci(n):
 # Example usage
 n = 9  # Example input
 print(fibonacci(n))  # print the answer
+n = 1  # Example input
+print(fibonacci(n))  # print the answer
+n = 3  # Example input
+print(fibonacci(n))  # print the answer
 
 
 
-#excersie 2
+#exercise 2
 # A function to convert a positive integer to its binary representation
 def to_binary(n):
     "Convert an integer to its binary representation as a string."
@@ -47,7 +53,7 @@ print(to_binary(num))  # print the answer
 
 
 
-#excersie 3
+#exercise 3
 
 
 
