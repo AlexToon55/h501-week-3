@@ -15,19 +15,30 @@ def fibonacci(n):
         return 0
     elif n == 2:
         return 1
-    elif n == 3:
-        return 2
     else:
         a, b = 0, 1
-        for _ in range(2, n):
+        for _ in range(1, n):
             a, b = b, a + b
         return b
 # Example usage
-n = 9  # Example input
-print(fibonacci(n))  # print the answer
+
 n = 1  # Example input
 print(fibonacci(n))  # print the answer
+n = 2  # Example input
+print(fibonacci(n))  # print the answer
 n = 3  # Example input
+print(fibonacci(n))  # print the answer
+n = 4  # Example input
+print(fibonacci(n))  # print the answer
+n = 5  # Example input
+print(fibonacci(n))  # print the answer
+n = 6  # Example input
+print(fibonacci(n))  # print the answer
+n = 7  # Example input
+print(fibonacci(n))  # print the answer
+n = 8  # Example input
+print(fibonacci(n))  # print the answer
+n = 9  # Example input
 print(fibonacci(n))  # print the answer
 
 
