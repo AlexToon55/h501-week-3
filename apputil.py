@@ -67,5 +67,55 @@ print(to_binary(num))  # print the answer
 
 #exercise 3
 
+url = 'https://github.com/melaniewalsh/Intro-Cultural-Analytics/raw/master/book/data/bellevue_almshouse_modified.csv'
+
+df_bellevue = pd.read_csv(url)
+print (df_bellevue.head(40))
+
+# list all values in the gender column
+print (df_bellevue.gender.unique())
+
+def task_1(): 
+    #Return a list of all column names, *sorted* such that the first column has the *least* missing values, and the last column has the *most* missing values (use the raw column names)
+    # *Note: there is an issue with the `gender` column you'll need to remedy first ...*
+    missing_counts = df_bellevue.isnull().sum()
+    print (missing_counts)
+    sorted_columns = missing_counts.sort_values().index.tolist()
+    print (sorted_columns)
+    return sorted_columns
+print (task_1())
+
+
+print ("exercise 2 starting")
+def task_2(): 
+    #Return a **data frame** with two columns:
+   #- the year (for each year in the data), `year`
+   #- the total number of entries (immigrant admissions) for each year, `total_admissions`
+    df_bellevue['year'] = pd.to_datetime(df_bellevue['date_in']).dt.year
+    admissions_per_year = df_bellevue.groupby('year').size().reset_index(name='total_admissions')
+    
+    return admissions_per_year
+print (task_2())
+
+
+
+print ("exercise 3 starting")
+def task_3(): 
+    #Return a **series** with:
+    # - Index: gender (for each gender in the data)
+    # - Values: the average age for the indexed gender.
+    
+    pandas_series = df_bellevue.groupby('gender')['age'].mean()
+    return pandas_series
+print (task_3())
+
+
+print ("exercise 4 starting")
+def task_4(): 
+    #Return a list of the 5 most common professions *in order of prevalence* (so, the most common is first).
+    top_5_profession = df_bellevue['profession'].value_counts().head(5).index.tolist()
+    return top_5_profession
+print (task_4())
+
 
 
