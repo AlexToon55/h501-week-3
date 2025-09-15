@@ -7,7 +7,7 @@ import pandas as pd
 
 #excersie 1
 # A simple function to compute the nth Fibonacci number
-def fib(n):
+def fibonacci(n):
     "Return the nth Fibonacci number."
     if n <= 0:
         return "Input should be an integer."
@@ -22,7 +22,7 @@ def fib(n):
         return b
 # Example usage
 n = 9  # Example input
-print(fib(n))  # print the answer
+print(fibonacci(n))  # print the answer
 
 
 
