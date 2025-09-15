@@ -12,7 +12,7 @@ def fibonacci(n):
     if n <= 0:
         return 0
     elif n == 1:
-        return 0
+        return 1
     elif n == 2:
         return 1
     else:
@@ -21,7 +21,8 @@ def fibonacci(n):
             a, b = b, a + b
         return b
 # Example usage
-
+n = 0  # Example input
+print(fibonacci(n))  # print the answer
 n = 1  # Example input
 print(fibonacci(n))  # print the answer
 n = 2  # Example input
