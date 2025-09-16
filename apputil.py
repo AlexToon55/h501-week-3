@@ -59,12 +59,12 @@ def task_1():
 #clean the g and h rows from the gender column
     df_bellevue['gender'] = (
         df_bellevue['gender']
-        astype('string')
+        .astype('string')
         .str.lower()
         .str.strip()
         .replace
         ({'h': pd.NA, 'g': pd.NA, 'm': 'm', 'f': 'f', '?': pd.NA})
-    )
+)
     missing_counts = df_bellevue[Raw_columns].isnull().sum() #use the raw column names to count missing values
     sorted_columns = missing_counts.sort_values().index.tolist()
     return sorted_columns
